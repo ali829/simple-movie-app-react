@@ -3,15 +3,16 @@
 import { useEffect, useState } from "react";
 import "./app.css";
 import SearchBar from "./components/SearchBar.jsx";
+import { MovieCard } from "./components/MovieCard";
+
 export default function App() {
   const API_URL = "http://www.omdbapi.com/";
   const API_KEY = "53513f53";
   const [movies, setMovies] = useState(null);
   useEffect(() => {
-    getMoviesByTerm("batman");
-    console.log(movies);
+    getMoviesByTerm();
   }, []);
-    const getMoviesByTerm = async (term) => {
+  const getMoviesByTerm = async (term = "batman") => {
     const response = await fetch(`${API_URL}?s=${term}&apikey=${API_KEY}`);
     let data = await response.json();
     setMovies(data.Search);
@@ -21,7 +22,16 @@ export default function App() {
     <>
       <h1 className="app-title">Flip Film</h1>
       <SearchBar handleSearch={getMoviesByTerm} />
-      {movies?.length > 0 ? movies[5].Title : "not found"}
+
+      {movies?.length > 0 ? (
+        <div className="movies-container">
+          {movies.map((movie) => (
+            <MovieCard key={movie.Title} movie={movie} />
+          ))}
+        </div>
+      ) : (
+        "not found"
+      )}
     </>
   );
 }
