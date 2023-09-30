@@ -133,6 +133,9 @@ button:hover {
   left: 0;
   transform: translate(-10px, -50%);
 }
+.empty {
+  text-align: center;
+}
 
 /* Small devices (landscape phones, 576px and up)  */
 @media (min-width: 200px) and (max-width: 768px) {

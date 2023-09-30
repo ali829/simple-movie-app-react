@@ -30,7 +30,7 @@ export default function App() {
           ))}
         </div>
       ) : (
-        "not found"
+        <h1 className="empty">Not Found...</h1>
       )}
     </>
   );
