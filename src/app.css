@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest&display=swap");
+
+:root {
+  --white-: #ffffff;
+  --black-: rgb(0, 0, 0);
+  --grey-: rgb(235, 235, 235);
+  --orange-: rgb(255, 106, 105);
+  --shadow-sm-: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg-: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl-: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(235, 235, 235);
+  font-family: "Onest", sans-serif;
+  margin: 40px 20%;
+}
+
+.app-title {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  text-transform: capitalize;
+}
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.search-input {
+  appearance: none;
+  border: 0.5px solid var(--black-);
+  outline: none;
+  width: 60%;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+button {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  border-radius: 5px;
+  appearance: none;
+  outline: none;
+  border: 0.5px solid var(--black-);
+  background-color: var(--white-);
+  box-shadow: var(--shadow-lg-);
+  transition: 0.4s all cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: none;
+}
