@@ -25,8 +25,8 @@ export default function App() {
 
       {movies?.length > 0 ? (
         <div className="movies-container">
-          {movies.map((movie) => (
-            <MovieCard key={movie.Title} movie={movie} />
+          {movies.map((movie, i) => (
+            <MovieCard key={i} movie={movie} />
           ))}
         </div>
       ) : (
